@@ -25,6 +25,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
+
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -35,6 +36,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingSessionConfiguration()
+        configuration.planeDetection = .horizontal
+        configuration.isLightEstimationEnabled  = true
         
         // Run the view's session
         sceneView.session.run(configuration)

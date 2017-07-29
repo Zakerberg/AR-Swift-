@@ -13,6 +13,8 @@
 		45FE120C1F2CD0800006EECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FE120A1F2CD0800006EECA /* Main.storyboard */; };
 		45FE120E1F2CD0800006EECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FE120D1F2CD0800006EECA /* Assets.xcassets */; };
 		45FE12111F2CD0800006EECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45FE120F1F2CD0800006EECA /* LaunchScreen.storyboard */; };
+		45FE121A1F2CDF6B0006EECA /* MJShipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE12191F2CDF6B0006EECA /* MJShipModel.swift */; };
+		45FE121C1F2CDF9D0006EECA /* MJBulletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FE121B1F2CDF9D0006EECA /* MJBulletModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		45FE120D1F2CD0800006EECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FE12101F2CD0800006EECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45FE12121F2CD0800006EECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FE12191F2CDF6B0006EECA /* MJShipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJShipModel.swift; sourceTree = "<group>"; };
+		45FE121B1F2CDF9D0006EECA /* MJBulletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJBulletModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		45FE12031F2CD0800006EECA /* MyARGame */ = {
 			isa = PBXGroup;
 			children = (
+				45FE12181F2CDF270006EECA /* MJModel */,
 				45FE12041F2CD0800006EECA /* AppDelegate.swift */,
 				45FE12061F2CD0800006EECA /* art.scnassets */,
 				45FE12081F2CD0800006EECA /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				45FE12121F2CD0800006EECA /* Info.plist */,
 			);
 			path = MyARGame;
+			sourceTree = "<group>";
+		};
+		45FE12181F2CDF270006EECA /* MJModel */ = {
+			isa = PBXGroup;
+			children = (
+				45FE12191F2CDF6B0006EECA /* MJShipModel.swift */,
+				45FE121B1F2CDF9D0006EECA /* MJBulletModel.swift */,
+			);
+			path = MJModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FE121A1F2CDF6B0006EECA /* MJShipModel.swift in Sources */,
 				45FE12091F2CD0800006EECA /* ViewController.swift in Sources */,
+				45FE121C1F2CDF9D0006EECA /* MJBulletModel.swift in Sources */,
 				45FE12051F2CD0800006EECA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
