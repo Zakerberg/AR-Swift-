@@ -30,6 +30,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
     @IBAction func shoot(_ sender: UITapGestureRecognizer) {
         
         sceneView.shootBullet()
+        playSound(of: .torpedo)
 
     }
     
@@ -62,6 +63,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         
         print("击中")
+        playSound(of: .collision)
         
         contact.nodeA.removeFromParentNode()
         contact.nodeB.removeFromParentNode()
