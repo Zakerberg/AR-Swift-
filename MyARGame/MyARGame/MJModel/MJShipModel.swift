@@ -27,6 +27,22 @@ class MJShipModel: SCNNode {
         self.physicsBody?.categoryBitMask = Masks.ship.rawValue
         //接触时要通知的节点掩码
         self.physicsBody?.contactTestBitMask = Masks.bullet.rawValue
+        
+        // 模型材料的贴图
+        let material = SCNMaterial()
+        // 平铺
+        material.diffuse.contents = #imageLiteral(resourceName: "TW")
+        
+        /*
+         let material1 = SCNMaterial()
+         material.diffuse.contents = #imageLiteral(resourceName: "AAA")
+         let material2 = SCNMaterial()
+         material.diffuse.contents = #imageLiteral(resourceName: "ABC")
+         
+         self.geometry?.materials = [material,material,material1,material2,material1,material2]
+         */
+        
+        self.geometry?.materials = [material,material,material,material,material,material]
     }
     
     required init?(coder aDecoder: NSCoder) {

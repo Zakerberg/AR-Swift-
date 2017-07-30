@@ -22,7 +22,10 @@ class MJBulletModel: SCNNode {
         self.physicsBody?.isAffectedByGravity = false
         self.physicsBody?.categoryBitMask = Masks.bullet.rawValue
         self.physicsBody?.contactTestBitMask = Masks.ship.rawValue
-
+        let material = SCNMaterial()
+        material.diffuse.contents = #imageLiteral(resourceName: "Swift")
+        
+        self.geometry?.materials = [material]
     }
     
     required init?(coder aDecoder: NSCoder) {
