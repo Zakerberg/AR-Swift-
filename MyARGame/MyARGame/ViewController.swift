@@ -11,7 +11,7 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -24,6 +24,13 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
         // 添加新飞船
         sceneView.newShip()
         
+    }
+    
+    /// shoot 发射子弹
+    @IBAction func shoot(_ sender: UITapGestureRecognizer) {
+        
+        sceneView.shootBullet()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +67,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
         contact.nodeB.removeFromParentNode()
         sceneView.newShip()
     }
-
+    
     //MARK: - ARSCNViewDelegate
     
     /*
@@ -71,7 +78,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
      return node
      }
      */
-
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
