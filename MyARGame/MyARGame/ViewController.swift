@@ -31,7 +31,7 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
         
         sceneView.shootBullet()
         playSound(of: .torpedo)
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,16 +58,35 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
         // Release any cached data, images, etc that aren't in use.
     }
     
+    func removeNodeDynamic(node: SCNNode, isExplode: Bool) {
+        playSound(of: .collision)
+        
+        if isExplode {
+            playSound(of: .explosion)
+            
+            let ps = SCNParticleSystem(named: "explosion", inDirectory: nil)
+            let psNode = SCNNode()
+            psNode.addParticleSystem(ps!)
+            
+            psNode.position = node.position
+            sceneView.scene.rootNode.addChildNode(psNode)
+        }
+        node.removeFromParentNode()
+    }
+    
     //MARK: - SCNPhysicsContactDelegate
     
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         
         print("击中")
-        playSound(of: .collision)
+        // 子弹是NodeB
+        removeNodeDynamic(node: contact.nodeB, isExplode: false)
         
-        contact.nodeA.removeFromParentNode()
-        contact.nodeB.removeFromParentNode()
-        sceneView.newShip()
+        // 延迟0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.removeNodeDynamic(node: contact.nodeA, isExplode: true)
+            self.sceneView.newShip()
+        }
     }
     
     //MARK: - ARSCNViewDelegate
