@@ -24,9 +24,9 @@ class MJShipModel: SCNNode {
         // 不受引力影响(悬浮)
         self.physicsBody?.isAffectedByGravity = false
         //识别掩码
-        self.physicsBody?.categoryBitMask    = 1 << 0
+        self.physicsBody?.categoryBitMask = Masks.ship.rawValue
         //接触时要通知的节点掩码
-        self.physicsBody?.contactTestBitMask = 1 << 1
+        self.physicsBody?.contactTestBitMask = Masks.bullet.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

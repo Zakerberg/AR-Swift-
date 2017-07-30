@@ -20,8 +20,8 @@ class MJBulletModel: SCNNode {
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         
         self.physicsBody?.isAffectedByGravity = false
-        self.physicsBody?.categoryBitMask    = 1 << 1
-        self.physicsBody?.contactTestBitMask = 1 << 0
+        self.physicsBody?.categoryBitMask = Masks.bullet.rawValue
+        self.physicsBody?.contactTestBitMask = Masks.ship.rawValue
 
     }
     
