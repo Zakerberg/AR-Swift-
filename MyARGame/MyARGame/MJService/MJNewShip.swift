@@ -15,8 +15,8 @@ extension ARSCNView {
         
         let newShip = MJShipModel ()
         
-        let x = -0.5[0.5]
-        let y = -0.5[0.5]
+        let x = -0.7[0.7]
+        let y = -0.7[0.7]
         
         newShip.position = SCNVector3(x, y, -1)
         self.scene.rootNode.addChildNode(newShip)

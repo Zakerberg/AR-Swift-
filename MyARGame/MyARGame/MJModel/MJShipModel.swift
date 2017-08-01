@@ -33,16 +33,14 @@ class MJShipModel: SCNNode {
         // 平铺
         material.diffuse.contents = #imageLiteral(resourceName: "TW")
         
-        /*
          let material1 = SCNMaterial()
-         material.diffuse.contents = #imageLiteral(resourceName: "AAA")
+         material1.diffuse.contents = #imageLiteral(resourceName: "AAA")
          let material2 = SCNMaterial()
-         material.diffuse.contents = #imageLiteral(resourceName: "ABC")
+         material2.diffuse.contents = #imageLiteral(resourceName: "ABC")
          
          self.geometry?.materials = [material,material,material1,material2,material1,material2]
-         */
-        
-        self.geometry?.materials = [material,material,material,material,material,material]
+ 
+//        self.geometry?.materials = [material,material,material,material,material,material]
     }
     
     required init?(coder aDecoder: NSCoder) {

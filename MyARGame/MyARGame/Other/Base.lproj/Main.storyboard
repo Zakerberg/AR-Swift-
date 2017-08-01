@@ -15,6 +15,10 @@
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ckg-f2-iiy" appends="YES" id="unl-aR-xFH"/>
+                        </connections>
                     </arscnView>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
@@ -23,7 +27,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ckg-f2-iiy">
                     <connections>
-                        <action selector="shoot:" destination="BV1-FR-VrT" id="bUQ-Kk-IQE"/>
+                        <action selector="shoot:" destination="BV1-FR-VrT" id="p5a-eF-BtW"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

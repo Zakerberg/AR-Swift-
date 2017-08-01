@@ -26,12 +26,12 @@ class ViewController: UIViewController, ARSCNViewDelegate,SCNPhysicsContactDeleg
         
     }
     
-    /// shoot 发射子弹
+    // shoot 发射子弹
     @IBAction func shoot(_ sender: UITapGestureRecognizer) {
-        
+
         sceneView.shootBullet()
         playSound(of: .torpedo)
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
